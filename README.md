@@ -1,4 +1,4 @@
-# Nome Próprio — normalize nomes de pessoas em português (JavaScript • Node.js)
+# Nome Próprio: normalize nomes de pessoas em português (JavaScript • Node.js)
 
 Biblioteca sem dependências para escrever nomes de pessoas do jeito certo: "JOÃO DA SILVA" vira "João da Silva" e "maria d'ávila" vira "Maria D'Ávila". Serve para limpar cadastros importados de planilhas e sistemas antigos, gerar crachás e certificados, separar nome e sobrenome e abreviar nomes que não cabem num campo. Acompanha uma linha de comando e uma página de demonstração.
 
@@ -121,4 +121,4 @@ Issues e pull requests são bem-vindos.
 
 ## Licença
 
-MIT — veja [LICENSE](LICENSE).
+MIT. Veja [LICENSE](LICENSE).

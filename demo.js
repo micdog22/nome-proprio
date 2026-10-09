@@ -14,7 +14,7 @@ const DEFAULT_HINT = maxLengthHint.textContent;
 
 function cell(text) {
   const td = document.createElement('td');
-  td.textContent = text || '—';
+  td.textContent = text || '-';
   if (!text) td.className = 'empty';
   return td;
 }
