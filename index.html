@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nome Próprio — normalize nomes de pessoas em português</title>
+  <meta name="description" content="Corrija maiúsculas e minúsculas de nomes de pessoas em português: partículas, apóstrofos, hífens, agnomes, iniciais e abreviação.">
+  <meta name="theme-color" content="#be185d">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👤</text></svg>">
+  <link rel="stylesheet" href="./styles.css">
+  <script type="module" src="./demo.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>Nome Próprio</h1>
+    <p class="lead">Cole uma lista de nomes em maiúsculas, minúsculas ou bagunçados e receba cada um escrito do jeito certo.</p>
+  </header>
+
+  <main>
+    <div class="columns">
+      <section class="card" aria-labelledby="names-title">
+        <h2 id="names-title">Nomes</h2>
+        <label for="names">Um nome por linha</label>
+        <textarea id="names" rows="9" spellcheck="false">MARIA EXEMPLO DA SILVA
+josé carlos de oliveira júnior
+ANA-CLARA D'ÁVILA DOS SANTOS
+  pedro   henrique   alves neto
+J. R. R. TOLKIEN
+marcos vinícius pereira ii
+LUDWIG VAN BEETHOVEN</textarea>
+        <div class="options">
+          <div>
+            <label for="max-length">Abreviar para até</label>
+            <div class="with-suffix">
+              <input id="max-length" type="number" min="1" max="200" step="1" inputmode="numeric" placeholder="sem limite" aria-describedby="max-length-hint">
+              <span aria-hidden="true">caracteres</span>
+            </div>
+            <p id="max-length-hint" class="hint">Deixe vazio para não abreviar.</p>
+          </div>
+          <label class="check" for="mcmac-toggle"><input type="checkbox" id="mcmac-toggle"> Tratar Mc e Mac (McDonald, MacLeod)</label>
+        </div>
+      </section>
+
+      <section class="card" aria-labelledby="output-title">
+        <h2 id="output-title">Normalizados</h2>
+        <label for="output">Resultado, na mesma ordem</label>
+        <textarea id="output" rows="9" readonly spellcheck="false"></textarea>
+        <div class="actions">
+          <button type="button" class="btn" id="copy-button">Copiar resultado</button>
+          <span id="notice" class="notice" role="status"></span>
+        </div>
+      </section>
+    </div>
+
+    <section class="card" aria-labelledby="parts-title">
+      <h2 id="parts-title">Partes de cada nome</h2>
+      <div class="table-scroll" aria-live="polite">
+        <table class="parts-table">
+          <thead>
+            <tr><th scope="col">Nome</th><th scope="col">Primeiro nome</th><th scope="col">Último sobrenome</th><th scope="col">Iniciais</th></tr>
+          </thead>
+          <tbody id="parts-body"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="card" aria-labelledby="rules-title">
+      <h2 id="rules-title">Regras aplicadas</h2>
+      <ul class="rules">
+        <li>Partículas em minúsculas, menos no início: da, das, de, do, dos, e, di, du, del, della, van, von e y.</li>
+        <li>Apóstrofos e hífens: D'Ávila, Sant'Anna, Ana-Clara.</li>
+        <li>Números romanos em maiúsculas: Pedro II, Luís XIV.</li>
+        <li>Agnomes com inicial maiúscula: Júnior, Jr., Filho, Neto, Sobrinho.</li>
+        <li>Iniciais preservadas: J. R. R. Tolkien.</li>
+        <li>Espaços extras removidos e acentos mantidos.</li>
+      </ul>
+      <pre><code>npm install github:micdog22/nome-proprio
+
+import { nomeProprio, abreviarNome } from 'nome-proprio';
+
+nomeProprio('JOÃO DA SILVA');                         // 'João da Silva'
+abreviarNome('Maria Aparecida da Silva Santos', 20);  // 'Maria A. S. Santos'</code></pre>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Tudo roda no seu navegador. Código aberto no <a href="https://github.com/micdog22/nome-proprio">GitHub</a> · Licença MIT</p>
+  </footer>
+</body>
+</html>

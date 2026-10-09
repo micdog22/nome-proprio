@@ -1,0 +1,38 @@
+{
+  "name": "nome-proprio",
+  "version": "1.0.0",
+  "description": "Normalize nomes de pessoas em português: maiúsculas certas, partículas, agnomes, iniciais e abreviação.",
+  "type": "module",
+  "main": "./src/index.js",
+  "exports": {
+    ".": "./src/index.js"
+  },
+  "bin": {
+    "nome-proprio": "./bin/nome-proprio.js"
+  },
+  "files": [
+    "src",
+    "bin"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "nome",
+    "nome-proprio",
+    "capitalizacao",
+    "normalizacao",
+    "abreviar-nome",
+    "pt-br",
+    "brasil"
+  ],
+  "scripts": {
+    "test": "node --test"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/micdog22/nome-proprio.git"
+  },
+  "homepage": "https://micdog22.github.io/nome-proprio/"
+}
